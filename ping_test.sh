@@ -14,7 +14,9 @@ COUNT=5
 RES=`ping -I eth0 $IP -i 0.2 -c $COUNT -W 1 | grep '64 bytes from' | wc -l`
 if [ $RES == $COUNT ];then
     echo PASS "($RES)/($COUNT)"
+    exit 1
 else
     echo FAIL "($RES)/($COUNT)"
+    exit 0
 fi
 
