@@ -13,10 +13,10 @@ COUNT=5
 `sudo dhclient eth0 2> /dev/null`
 RES=`ping -I eth0 $IP -i 0.2 -c $COUNT -W 1 | grep '64 bytes from' | wc -l`
 if [ $RES == $COUNT ];then
-    echo PASS "($RES)/($COUNT)"
+    echo "0"
     exit 0
 else
-    echo FAIL "($RES)/($COUNT)"
+    echo "1"
     exit 1
 fi
 
